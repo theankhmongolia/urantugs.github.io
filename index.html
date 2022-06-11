@@ -1,0 +1,113 @@
+<!DOCTYPE HTML>
+<!--
+	Dimension by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+	<head>
+		<title>Төрсөн өдрийн мэнд хүргье.</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="assets/css/main.css" />
+		<!--[if lte IE 9]><link rel="stylesheet" href="assets/css/ie9.css" /><![endif]-->
+		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+		
+	
+	</head>
+	<body>
+	
+		<!-- Wrapper -->
+			<div id="wrapper">
+				<!-- Header -->
+					<header id="header">
+						<div class="logo">
+							<span class="icon fa-diamond"></span>
+						</div>
+						<div class="content">
+							<div class="inner" id="typedtext">
+								  
+							</div>
+						</div>
+						<nav>
+							<ul>
+								<li><button  onclick="playVid()" type="button">Төрсөн өдрийн мэнд хүргье.</button>
+								<audio id="myVideo" controls style="display: none">
+  <source src="https://hosnavch.github.io/sound.mp3" type="audio/mp3">
+</audio>
+						<script>
+var vid = document.getElementById("myVideo"); 
+
+function playVid() { 
+  return vid.paused ? vid.play() : vid.pause();
+} 
+</script>
+								</li>
+								<!--<li><a href="#elements">Elements</a></li>-->
+							</ul>
+						</nav>
+						
+					</header>
+						
+				<!-- Footer -->
+					<footer id="footer">
+						<p class="copyright">&copy; <a href="https://www.facebook.com/stm.d.taylor">Тэмүүжингээс</a> 2022.06.11</p>
+					</footer>
+
+			</div>
+
+		<!-- BG -->
+			<div id="bg"></div>
+
+		<!-- Scripts -->
+			<script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/skel.min.js"></script>
+			<script src="assets/js/util.js"></script>
+			<script src="assets/js/main.js"></script>
+		<script>
+		// set up text to print, each item in array is new line
+var aText = new Array(
+"When life gives you a", 
+"hundred reasons to cry,",
+"show life that",
+'you have a',
+"thousand reasons to smile."
+);
+var iSpeed = 100; // time delay of print out
+var iIndex = 0; // start printing array at this posision
+var iArrLength = aText[0].length; // the length of the text array
+var iScrollAt = 20; // start scrolling up at this many lines
+ 
+var iTextPos = 0; // initialise text position
+var sContents = ''; // initialise contents variable
+var iRow; // initialise current row
+ 
+function typewriter()
+{
+ sContents =  ' ';
+ iRow = Math.max(0, iIndex-iScrollAt);
+ var destination = document.getElementById("typedtext");
+ 
+ while ( iRow < iIndex ) {
+  sContents += aText[iRow++] + '<br />';
+ }
+ destination.innerHTML = sContents + aText[iIndex].substring(0, iTextPos) + "_";
+ if ( iTextPos++ == iArrLength ) {
+  iTextPos = 0;
+  iIndex++;
+  if ( iIndex != aText.length ) {
+   iArrLength = aText[iIndex].length;
+   setTimeout("typewriter()", 500);
+  }
+ } else {
+  setTimeout("typewriter()", iSpeed);
+ }
+}
+
+
+typewriter();
+		</script>
+
+	</body>
+</html>
